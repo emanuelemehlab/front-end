@@ -32,7 +32,7 @@
                         <td>{{ pren.partenza }}</td>
                         <td>{{ pren.arrivo }}</td>
                         <td v-if="pren.ora % 2 == 0">{{ pren.ora / 2 }}:00</td>
-                        <td v-else>{{ pren.ora / 2 }}:30</td>
+                        <td v-else>{{ (pren.ora / 2) - 0.5 }}:30</td>
                         <td>{{ pren.cliente }}</td>
                         <th>{{ pren.n_posti }}</th>
                         <th v-if="pren.bagagliaio == true">
@@ -80,7 +80,7 @@
                         <td>{{ pren.partenza }}</td>
                         <td>{{ pren.arrivo }}</td>
                         <td v-if="pren.ora % 2 == 0">{{ pren.ora / 2 }}:00</td>
-                        <td v-else>{{ pren.ora / 2 }}:30</td>
+                        <td v-else>{{ (pren.ora / 2) - 0.5}}:30</td>
                         <td>{{ pren.cliente }}</td>
                         <th>{{ pren.n_posti }}</th>
                         <th v-if="pren.bagagliaio == true">
@@ -131,7 +131,7 @@
                         <td>{{ pren.partenza }}</td>
                         <td>{{ pren.arrivo }}</td>
                         <td v-if="pren.ora % 2 == 0">{{ pren.ora / 2 }}:00</td>
-                        <td v-else>{{ pren.ora / 2 }}:30</td>
+                        <td v-else>{{ (pren.ora / 2) - 0.5}}:30</td>
                         <td>{{ pren.cliente }}</td>
                         <th>{{ pren.n_posti }}</th>
                         <th v-if="pren.bagagliaio == true">
@@ -336,7 +336,7 @@ export default {
       document.getElementById("confcodbtn").innerHTML =
         "<div class='spinner-border spinner-border-sm' role='status'></div>";
         var codice = document.getElementById("codice").value;
-        axios.post("/controlloCodice", {id: this.id, codice: codice}).then(res => {
+        axios.post("/api/prenotazione/controlloCodice", {id: this.id, codice: codice}).then(res => {
           document.getElementById("codice").value = "";
           this.$refs["modaleCodice"].hide();
           alert(res.data);
