@@ -32,7 +32,7 @@
                         <td>{{ pren.partenza }}</td>
                         <td>{{ pren.arrivo }}</td>
                         <td v-if="pren.ora % 2 == 0">{{ pren.ora / 2 }}:00</td>
-                        <td v-else>{{ pren.ora / 2 }}:30</td>
+                        <td v-else>{{ (pren.ora / 2) - 0.5 }}:30</td>
                         <td>{{ pren.tassista }}</td>
                         <th>{{ pren.n_posti }}</th>
                         <th v-if="pren.bagagliaio == true">
@@ -78,7 +78,7 @@
                         <td>{{ pren.partenza }}</td>
                         <td>{{ pren.arrivo }}</td>
                         <td v-if="pren.ora % 2 == 0">{{ pren.ora / 2 }}:00</td>
-                        <td v-else>{{ pren.ora / 2 }}:30</td>
+                        <td v-else>{{ (pren.ora / 2) -0.5 }}:30</td>
                         <td>{{ pren.tassista }}</td>
                         <th>{{ pren.n_posti }}</th>
                         <th v-if="pren.bagagliaio == true">
@@ -135,7 +135,7 @@
                         <td>{{ pren.partenza }}</td>
                         <td>{{ pren.arrivo }}</td>
                         <td v-if="pren.ora % 2 == 0">{{ pren.ora / 2 }}:00</td>
-                        <td v-else>{{ pren.ora / 2 }}:30</td>
+                        <td v-else>{{ (pren.ora / 2) - 0.5 }}:30</td>
                         <td>{{ pren.tassista }}</td>
                         <th>{{ pren.n_posti }}</th>
                         <th v-if="pren.bagagliaio == true">
